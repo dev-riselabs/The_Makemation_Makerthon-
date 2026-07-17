@@ -1,7 +1,6 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Home() {
+export default function RegisterSelection() {
   return (
     <main className="flex-grow flex flex-col items-center pt-16 px-4 pb-12 max-w-6xl mx-auto w-full">
       {/* Badge */}
@@ -20,7 +19,7 @@ export default function Home() {
       {/* Cards Container */}
       <div className="grid md:grid-cols-2 gap-8 w-full max-w-5xl mb-20">
         {/* Project Owner Card */}
-        <Link to="/register" className="border border-border-card rounded-3xl p-8 flex flex-col items-start bg-bg-primary hover:shadow-md transition-shadow cursor-pointer block">
+        <Link to="/register/owner" className="border border-border-card rounded-3xl p-8 flex flex-col items-start bg-bg-primary hover:shadow-md transition-shadow cursor-pointer block">
          <div className="p-3 rounded-xl mb-6 bg-badge-bg">
             <svg className="w-8 h-8 text-text-primary" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clipPath="url(#clip0_2_35)">
@@ -76,7 +75,7 @@ export default function Home() {
 
       {/* Sign In */}
       <p className="text-text-tertiary font-quicksand text-lg">
-        Already registered? <a href="#" className="font-bold text-text-primary hover:underline">Sign In</a>
+        Already registered? <Link to="/" className="font-bold text-text-primary hover:underline">Sign In</Link>
       </p>
     </main>
   );

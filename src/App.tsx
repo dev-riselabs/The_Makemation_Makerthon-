@@ -1,40 +1,55 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
+import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import SignIn from './pages/SignIn';
+import RegisterSelection from './pages/RegisterSelection';
 import Register from './pages/Register';
+import Dashboard from './pages/Dashboard';
+import Overview from './pages/Overview';
+import Projects from './pages/Projects';
+import Header from './components/Header';
+
+function AppContent() {
+  const location = useLocation();
+  const isAdmin = location.pathname.startsWith('/admin');
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  return (
+    <div className={`bg-bg-primary text-text-primary flex flex-col font-quicksand ${isAdmin ? 'h-screen overflow-hidden' : 'min-h-screen'}`}>
+      {/* Top Banner */}
+      <div className="h-2 w-full bg-brand flex-shrink-0"></div>
+      
+      {/* Header */}
+      <div className="flex-shrink-0 z-40 relative shadow-sm">
+        <Header onMenuClick={() => setIsSidebarOpen(!isSidebarOpen)} isSidebarOpen={isSidebarOpen} />
+      </div>
+
+      {/* Main Content Area */}
+      <div className={`flex flex-col ${isAdmin ? 'flex-grow overflow-hidden relative' : 'flex-grow'}`}>
+        <Routes>
+          <Route path="/" element={<SignIn />} />
+          <Route path="/register" element={<RegisterSelection />} />
+          <Route path="/register/:type" element={<Register />} />
+          <Route path="/admin" element={<Dashboard isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen} />}>
+            <Route index element={<Overview />} />
+            <Route path="projects" element={<Projects />} />
+          </Route>
+        </Routes>
+      </div>
+
+      {/* Footer */}
+      {!isAdmin && (
+        <footer className="pb-12 pt-8 text-center text-sm text-text-tertiary font-quicksand mt-auto flex-shrink-0">
+          Makemation AI Tech Festivals · Powered by Rise Interactives Studio
+        </footer>
+      )}
+    </div>
+  );
+}
 
 function App() {
   return (
     <Router>
-      <div className="min-h-screen bg-bg-primary text-text-primary flex flex-col font-quicksand">
-        {/* Top Banner */}
-        <div className="h-2 w-full bg-brand"></div>
-        
-        {/* Header */}
-        <header className="flex justify-between items-center px-6 py-4 bg-header-bg">
-          <div>
-            <img src="/dey_make_logo.png" alt="DeyMake Logo" className="h-10 object-contain" />
-          </div>
-          <div className="flex items-center gap-2 cursor-pointer">
-            <img src="/profile_image.png" alt="Profile" className="h-10 w-10 rounded-full object-cover" />
-            <svg className="w-4 h-4 text-icon-blue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </div>
-        </header>
-
-        {/* Main Content Area */}
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/register/:type" element={<Register />} />
-          <Route path="/register" element={<Register />} />
-        </Routes>
-
-        {/* Footer */}
-        <footer className="pb-12 pt-8 text-center text-sm text-text-tertiary font-quicksand mt-auto">
-          Makemation AI Tech Festivals · Powered by Rise Interactives Studio
-        </footer>
-      </div>
+      <AppContent />
     </Router>
   );
 }
