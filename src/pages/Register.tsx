@@ -12,6 +12,10 @@ export default function Register() {
   const [availableDocs, setAvailableDocs] = useState<string[]>([]);
   const [legalIssues, setLegalIssues] = useState(false);
   const [agreeTerms, setAgreeTerms] = useState(false);
+  const [investorFirmTypes, setInvestorFirmTypes] = useState<string[]>([]);
+  const [typicalCheckSize, setTypicalCheckSize] = useState('');
+  const [preferredStages, setPreferredStages] = useState<string[]>([]);
+  const [investorAgreeTerms, setInvestorAgreeTerms] = useState(false);
 
   return (
     <main className="flex-grow flex flex-col items-center pt-8 px-4 pb-12 max-w-4xl mx-auto w-full">
@@ -35,14 +39,42 @@ export default function Register() {
 
       {/* Title */}
       <h1 className="text-3xl md:text-4xl font-bold mb-4 text-center font-jost text-text-primary">
-        Register Your Project
+        {isInvestor ? 'Join as an Investor' : 'Register Your Project'}
       </h1>
       <p className="text-text-secondary font-quicksand text-lg mb-12 text-center">
         Join the Makemation AI National Festivals Makerthon
       </p>
 
       {/* Stepper */}
-      {!isInvestor && (
+      {isInvestor ? (
+        <div className="flex items-center md:justify-center justify-start w-full max-w-2xl mx-auto mb-12 overflow-x-auto py-4 px-4 snap-x">
+          {/* Step 1 */}
+          <div className="flex items-center shrink-0">
+            <div className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-quicksand text-sm transition-colors ${step === 1 ? 'bg-brand text-text-primary font-bold shadow-md' : 'bg-gray-100 text-text-tertiary font-medium'}`}>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
+              Account
+            </div>
+            <div className="h-0.5 w-6 md:w-12 bg-gray-200"></div>
+          </div>
+
+          {/* Step 2 */}
+          <div className="flex items-center shrink-0">
+            <div className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-quicksand text-sm transition-colors ${step === 2 ? 'bg-brand text-text-primary font-bold shadow-md' : 'bg-gray-100 text-text-tertiary font-medium'}`}>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg>
+              Firm
+            </div>
+            <div className="h-0.5 w-6 md:w-12 bg-gray-200"></div>
+          </div>
+
+          {/* Step 3 */}
+          <div className="flex items-center shrink-0">
+            <div className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-quicksand text-sm transition-colors ${step === 3 ? 'bg-brand text-text-primary font-bold shadow-md' : 'bg-gray-100 text-text-tertiary font-medium'}`}>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              Investment
+            </div>
+          </div>
+        </div>
+      ) : (
         <div className="flex items-center md:justify-center justify-start w-full max-w-2xl mx-auto mb-12 overflow-x-auto py-4 px-4 snap-x">
           {/* Step 1 */}
           <div className="flex items-center shrink-0">
@@ -147,8 +179,8 @@ export default function Register() {
             </>
           )}
 
-          {/* STEP 2: Project Information */}
-          {step === 2 && (
+          {/* STEP 2: Project / Firm Information */}
+          {step === 2 && !isInvestor && (
             <>
               <h2 className="text-2xl font-bold font-jost text-text-primary mb-8">Project Information</h2>
               <div className="grid md:grid-cols-2 gap-x-6 gap-y-6">
@@ -201,8 +233,67 @@ export default function Register() {
             </>
           )}
 
-          {/* STEP 3: Stage & Funding */}
-          {step === 3 && (
+          {step === 2 && isInvestor && (
+            <>
+              <h2 className="text-2xl font-bold font-jost text-text-primary mb-8">Firm Information</h2>
+              <div className="flex flex-col gap-8">
+                {/* Firm Name */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm font-medium text-text-secondary">Firm/Organization Name *</label>
+                  <input type="text" placeholder="Your firm name" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:border-brand text-text-primary placeholder-gray-400 bg-gray-50" />
+                </div>
+
+                {/* Investor Type */}
+                <div className="flex flex-col gap-3">
+                  <label className="text-sm font-medium text-text-secondary">Investor Type * (select all that apply)</label>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    {['Angel Investor', 'Venture Capital', 'Private Equity', 'Family Office', 'Corporate VC', 'Development Finance'].map((item, idx) => {
+                      const isSelected = investorFirmTypes.includes(item);
+                      return (
+                        <button 
+                          key={idx} 
+                          type="button" 
+                          onClick={() => {
+                            if (isSelected) setInvestorFirmTypes(investorFirmTypes.filter(i => i !== item));
+                            else setInvestorFirmTypes([...investorFirmTypes, item]);
+                          }}
+                          className={`w-full px-4 py-4 rounded-xl border text-sm font-medium transition-colors text-center ${isSelected ? 'bg-text-primary text-white border-text-primary' : 'bg-white border-gray-200 text-text-secondary hover:border-text-primary hover:text-text-primary'}`}
+                        >
+                          {item}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Sectors of Interest */}
+                <div className="flex flex-col gap-2">
+                  <label className="text-sm font-medium text-text-secondary">Sectors of Interest *</label>
+                  <div className="relative">
+                    <input type="text" placeholder="Search and select sectors..." className="w-full px-4 py-3 pr-10 rounded-xl border border-gray-200 focus:outline-none focus:border-brand text-text-primary placeholder-gray-400 bg-gray-50" />
+                    <button type="button" className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
+                    </button>
+                  </div>
+                  <p className="text-[10px] text-gray-400 mt-1">Select all sectors that match your investment focus</p>
+                </div>
+              </div>
+              
+              <div className="flex justify-between items-center mt-12">
+                <button onClick={() => setStep(1)} type="button" className="flex items-center gap-2 font-bold font-jost text-text-primary hover:text-gray-600 transition-colors">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                  Back
+                </button>
+                <button onClick={() => setStep(3)} type="button" className="bg-brand text-text-primary font-bold font-jost px-8 py-3 rounded-xl flex items-center gap-2 hover:opacity-90 transition-opacity">
+                  Continue
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                </button>
+              </div>
+            </>
+          )}
+
+          {/* STEP 3: Stage & Funding (Project Owner) */}
+          {step === 3 && !isInvestor && (
             <>
               <h2 className="text-2xl font-bold font-jost text-text-primary mb-8">Stage & Funding</h2>
               
@@ -303,6 +394,84 @@ export default function Register() {
                 </button>
                 <button onClick={() => setStep(4)} type="button" className="bg-brand text-text-primary font-bold font-jost px-8 py-3 rounded-xl flex items-center gap-2 hover:opacity-90 transition-opacity">
                   Continue
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
+                </button>
+              </div>
+            </>
+          )}
+
+          {/* STEP 3: Investment (Investor) */}
+          {step === 3 && isInvestor && (
+            <>
+              <h2 className="text-2xl font-bold font-jost text-text-primary mb-8">Investment Preferences</h2>
+              
+              <div className="flex flex-col gap-8">
+                {/* Typical Check Size */}
+                <div className="flex flex-col gap-3">
+                  <label className="text-sm font-medium text-text-secondary">Typical Check Size *</label>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    {['Under $500k', '$500k - $2M', '$2M - $10M', '$10M - $50M', '$50M - $100M', 'Above $100M'].map((item, idx) => {
+                      const isSelected = typicalCheckSize === item;
+                      return (
+                        <button 
+                          key={idx} 
+                          type="button" 
+                          onClick={() => setTypicalCheckSize(item)}
+                          className={`w-full px-4 py-4 rounded-xl border text-sm font-medium transition-colors text-center ${isSelected ? 'bg-text-primary text-white border-text-primary' : 'bg-white border-gray-200 text-text-secondary hover:border-text-primary hover:text-text-primary'}`}
+                        >
+                          {item}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Preferred Stages */}
+                <div className="flex flex-col gap-3">
+                  <label className="text-sm font-medium text-text-secondary">Preferred Stages *</label>
+                  <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    {['Seed', 'Early stage', 'Growth', 'Late Stage', 'Infrastructure'].map((item, idx) => {
+                      const isSelected = preferredStages.includes(item);
+                      return (
+                        <button 
+                          key={idx} 
+                          type="button" 
+                          onClick={() => {
+                            if (isSelected) setPreferredStages(preferredStages.filter(i => i !== item));
+                            else setPreferredStages([...preferredStages, item]);
+                          }}
+                          className={`w-full px-4 py-4 rounded-xl border text-sm font-medium transition-colors text-center ${isSelected ? 'bg-text-primary text-white border-text-primary' : 'bg-white border-gray-200 text-text-secondary hover:border-text-primary hover:text-text-primary'}`}
+                        >
+                          {item}
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                {/* Terms Agreement Checkbox */}
+                <div className="flex flex-col gap-4 mt-2">
+                  <div 
+                    onClick={() => setInvestorAgreeTerms(!investorAgreeTerms)}
+                    className="flex items-center gap-4 p-5 rounded-xl border border-gray-200 cursor-pointer hover:border-gray-300 transition-colors bg-white"
+                  >
+                    <div className="w-5 h-5 rounded-[4px] border-2 border-text-primary flex items-center justify-center flex-shrink-0">
+                      {investorAgreeTerms && <div className="w-2.5 h-2.5 bg-text-primary rounded-[2px]"></div>}
+                    </div>
+                    <span className="text-[15px] font-medium text-text-secondary">
+                      I agree to the <span className="font-bold text-text-primary">Terms</span> and <span className="font-bold text-text-primary">Privacy Policy.</span> *
+                    </span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="flex justify-between items-center mt-12">
+                <button onClick={() => setStep(2)} type="button" className="flex items-center gap-2 font-bold font-jost text-text-primary hover:text-gray-600 transition-colors">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
+                  Back
+                </button>
+                <button type="submit" onClick={(e) => e.preventDefault()} className="bg-brand text-text-primary font-bold font-jost px-8 py-3 rounded-xl flex items-center gap-2 hover:opacity-90 transition-opacity">
+                  Complete Registration
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg>
                 </button>
               </div>
