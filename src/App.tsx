@@ -68,7 +68,7 @@ function AppContent() {
       </div>
 
       {/* Footer */}
-      {!isAdmin || !isInvestor && (
+      {(!isAdmin && !isInvestor) && (
         <footer className="pb-12 pt-8 text-center text-sm text-text-tertiary font-quicksand mt-auto shrink-0">
           Makemation AI Tech Festivals · Powered by Rise Interactives Studio
         </footer>
