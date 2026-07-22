@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function SignIn() {
   return (
-    <main className="flex-grow flex flex-col items-center pt-8 px-4 pb-12 w-full max-w-5xl mx-auto">
+    <main className="grow flex flex-col items-center pt-8 px-4 pb-12 w-full max-w-5xl mx-auto">
       {/* Badge */}
       <div className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium mb-10 bg-badge-bg text-badge-text">
         <svg className="w-5 h-5 text-text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -20,7 +20,7 @@ export default function SignIn() {
       </p>
 
       {/* Form Card */}
-      <div className="w-full max-w-[700px] bg-bg-primary border border-border-card rounded-xl p-8 md:p-10 shadow-[0_4px_20px_rgb(0,0,0,0.03)]">
+      <div className="w-full max-w-175 bg-bg-primary border border-border-card rounded-xl p-8 md:p-10 shadow-[0_4px_20px_rgb(0,0,0,0.03)]">
         <h2 className="text-2xl font-bold font-jost text-text-primary mb-8">Sign In</h2>
         
         <form className="flex flex-col font-quicksand gap-6">

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Projects() {
+export default function InvestorProjects() {
   const [activeFilter, setActiveFilter] = useState('All States Project');
   const [isFiltersOpen, setIsFiltersOpen] = useState(true);
   const [activeInvestmentValue, setActiveInvestmentValue] = useState('Any');

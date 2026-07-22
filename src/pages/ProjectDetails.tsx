@@ -69,7 +69,7 @@ export default function ProjectDetails() {
           {/* Financial Overview */}
           <div className="bg-bg-secondary rounded-2xl border border-border-card p-6">
             <div className="flex items-center gap-3 mb-6">
-              <svg className="w-5 h-5 text-[#16A34A]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+              <svg className="w-5 h-5 text-investors-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
               <h2 className="text-xl font-bold font-jost text-text-primary">Financial Overview</h2>
             </div>
             <div className="grid grid-cols-2 gap-4 mb-4">
@@ -98,7 +98,7 @@ export default function ProjectDetails() {
         </div>
 
         {/* Right Column */}
-        <div className="w-full lg:w-[380px] flex flex-col gap-6">
+        <div className="w-full lg:w-95 flex flex-col gap-6">
           
           {/* Contact Information */}
           <div className="bg-bg-primary rounded-2xl border border-border-card overflow-hidden">
@@ -108,19 +108,19 @@ export default function ProjectDetails() {
             </div>
             <div className="p-6 flex flex-col gap-4">
               <div className="flex items-center gap-4 text-[13px] text-text-secondary">
-                <svg className="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1v1H9V7zm5 0h1v1h-1V7zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1z" /></svg>
+                <svg className="w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1v1H9V7zm5 0h1v1h-1V7zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1z" /></svg>
                 <span>Full Name of the Project Owner</span>
               </div>
               <div className="flex items-center gap-4 text-[13px] text-text-secondary">
-                <svg className="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1v1H9V7zm5 0h1v1h-1V7zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1z" /></svg>
+                <svg className="w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1v1H9V7zm5 0h1v1h-1V7zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1z" /></svg>
                 <span>Musa Samuel</span>
               </div>
               <div className="flex items-center gap-4 text-[13px] text-text-secondary">
-                <svg className="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1v1H9V7zm5 0h1v1h-1V7zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1z" /></svg>
+                <svg className="w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1v1H9V7zm5 0h1v1h-1V7zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1z" /></svg>
                 <span>musasamuel@gmail.com</span>
               </div>
               <div className="flex items-center gap-4 text-[13px] text-text-secondary">
-                <svg className="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1v1H9V7zm5 0h1v1h-1V7zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1z" /></svg>
+                <svg className="w-5 h-5 text-gray-400 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1v1H9V7zm5 0h1v1h-1V7zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1z" /></svg>
                 <span>Lagos, Nigeria</span>
               </div>
             </div>
@@ -139,11 +139,11 @@ export default function ProjectDetails() {
               </div>
               <div className="flex justify-between items-center px-6 py-6 border-b border-border-light">
                 <span className="text-text-secondary">Sector</span>
-                <span className="font-medium bg-[#EFF6FF] text-[#3B82F6] px-4 py-1.5 rounded-full text-xs">AI in Education</span>
+                <span className="font-medium bg-makers-bg text-icon-blue px-4 py-1.5 rounded-full text-xs">AI in Education</span>
               </div>
               <div className="flex justify-between items-center px-6 py-6 border-b border-border-light">
                 <span className="text-text-secondary">Funding Goal</span>
-                <span className="font-medium text-[#16A34A]">Under - 1M</span>
+                <span className="font-medium text-investors-icon">Under - 1M</span>
               </div>
               <div className="flex justify-between items-center px-6 py-6">
                 <span className="text-text-secondary">Listed Date</span>
@@ -168,7 +168,7 @@ export default function ProjectDetails() {
               </div>
               <div className="rounded-xl border border-gray-200 border-dashed p-3 flex items-center justify-between">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
+                  <div className="w-10 h-10 rounded-lg overflow-hidden shrink-0">
                     <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=100&h=100&fit=crop" alt="Demo Video" className="w-full h-full object-cover" />
                   </div>
                   <div>
@@ -286,16 +286,16 @@ export default function ProjectDetails() {
                 <svg className="w-5 h-5 text-text-primary cursor-pointer" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
+                <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0">
                   <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=200&h=200&fit=crop" className="w-full h-full object-cover" alt="Screenshot 1" />
                 </div>
-                <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
+                <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0">
                   <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=200&h=200&fit=crop" className="w-full h-full object-cover" alt="Screenshot 2" />
                 </div>
-                <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0">
+                <div className="w-16 h-16 rounded-xl overflow-hidden shrink-0">
                   <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=200&h=200&fit=crop" className="w-full h-full object-cover" alt="Screenshot 3" />
                 </div>
-                <div className="w-16 h-16 rounded-xl bg-black flex items-center justify-center text-white cursor-pointer flex-shrink-0 hover:bg-gray-800 transition-colors">
+                <div className="w-16 h-16 rounded-xl bg-black flex items-center justify-center text-white cursor-pointer shrink-0 hover:bg-gray-800 transition-colors">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" /></svg>
                 </div>
               </div>

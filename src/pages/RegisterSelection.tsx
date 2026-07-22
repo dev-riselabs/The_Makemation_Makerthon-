@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 
 export default function RegisterSelection() {
   return (
-    <main className="flex-grow flex flex-col items-center pt-16 px-4 pb-12 max-w-6xl mx-auto w-full">
+    <main className="grow flex flex-col items-center pt-16 px-4 pb-12 max-w-6xl mx-auto w-full">
       {/* Badge */}
       <div className="flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-medium mb-10 bg-badge-bg text-badge-text">
         <svg className="w-5 h-5 text-text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -19,7 +19,7 @@ export default function RegisterSelection() {
       {/* Cards Container */}
       <div className="grid md:grid-cols-2 gap-8 w-full max-w-5xl mb-20">
         {/* Project Owner Card */}
-        <Link to="/register/owner" className="border border-border-card rounded-3xl p-8 flex flex-col items-start bg-bg-primary hover:shadow-md transition-shadow cursor-pointer block">
+        <Link to="/register/owner" className="border border-border-card rounded-3xl p-8 flex flex-col items-start bg-bg-primary hover:shadow-md transition-shadow cursor-pointer">
          <div className="p-3 rounded-xl mb-6 bg-badge-bg">
             <svg className="w-8 h-8 text-text-primary" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clipPath="url(#clip0_2_35)">
@@ -46,7 +46,7 @@ export default function RegisterSelection() {
         </Link>
 
         {/* Investor Card */}
-        <Link to="/register/investor" className="border border-border-card rounded-3xl p-8 flex flex-col items-start bg-bg-primary hover:shadow-md transition-shadow cursor-pointer block">
+        <Link to="/register/investor" className="border border-border-card rounded-3xl p-8 flex flex-col items-start bg-bg-primary hover:shadow-md transition-shadow cursor-pointer ">
           <div className="p-3 rounded-xl mb-6 bg-badge-bg">
             <svg className="w-8 h-8 text-text-primary" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
               <g clipPath="url(#clip0_2_35)">

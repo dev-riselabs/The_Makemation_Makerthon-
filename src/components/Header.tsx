@@ -2,7 +2,7 @@ import { useLocation } from 'react-router-dom';
 
 export default function Header({ onMenuClick, isSidebarOpen }: { onMenuClick?: () => void, isSidebarOpen?: boolean }) {
   const location = useLocation();
-  const isDashboard = location.pathname.startsWith('/dashboard');
+  const isDashboard = location.pathname.startsWith('/admin') || location.pathname.startsWith('/investor') ;
 
   return (
     <header className="flex justify-between items-center px-6 py-4 bg-header-bg">
@@ -36,7 +36,7 @@ export default function Header({ onMenuClick, isSidebarOpen }: { onMenuClick?: (
           </div>
           
           <div className="flex items-center gap-3 cursor-pointer">
-            <img src="/profile_image.png" alt="Profile" className="h-10 w-10 rounded-full object-cover" />
+            <img src="/user.jpg" alt="Profile" className="h-10 w-10 rounded-full object-cover" />
             <div className="hidden md:block text-left">
               <h4 className="text-sm font-bold text-text-primary font-jost">Administration</h4>
               <p className="text-[10px] text-text-secondary font-medium">helloadministration@gmail.com</p>
