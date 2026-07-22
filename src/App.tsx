@@ -62,6 +62,7 @@ function AppContent() {
           <Route path="/investor" element={<Investor />}>
             <Route index element={<InvestorCommand />} />
             <Route path='projects' element={<InvestorProjects/>}/>
+            <Route path="projects/:id" element={<ProjectDetails />} />
           </Route>
         </Routes>
       </div>

@@ -2,11 +2,11 @@ export default function ProjectDetails() {
   return (
     <div className="w-full">
       {/* Header Container */}
-      <div className="rounded-2xl border border-border-card overflow-hidden mb-6">
+      <div className="rounded-2xl border border-black/30 overflow-hidden mb-6">
         {/* Top yellow part */}
         <div className="bg-brand p-8 pb-10">
           <div className="flex items-center gap-4 mb-6">
-            <span className="bg-black/10 text-text-primary text-sm px-5 py-1.5 rounded-lg">AI in Education</span>
+            <span className="bg-sector-label text-text-primary text-sm px-5 py-1.5 rounded-lg">AI in Education</span>
             <span className="text-text-primary font-medium text-sm">Pre-Feasibility</span>
           </div>
           <h1 className="text-3xl font-bold font-jost text-text-primary mb-4">Project Number One</h1>
@@ -17,7 +17,7 @@ export default function ProjectDetails() {
         </div>
         
         {/* Bottom stats part */}
-        <div className="bg-bg-primary p-8 grid grid-cols-1 md:grid-cols-4 gap-6 text-center border-t border-border-card">
+        <div className="bg-white p-8 grid grid-cols-1 md:grid-cols-4 gap-6 text-center border-t border-border-card">
           <div>
             <p className="text-2xl font-bold font-jost text-text-primary mb-1">Under - 1M</p>
             <p className="text-text-secondary text-sm">Funding Required</p>
@@ -38,24 +38,25 @@ export default function ProjectDetails() {
       </div>
 
       {/* Main Content Grid */}
-      <div className="flex flex-col lg:flex-row gap-6">
+      <div className="grid grid-cols-5 gap-6 font-quicksand">
         {/* Left Column */}
-        <div className="flex-1 flex flex-col gap-6">
+        <div className="col-span-3 flex flex-col gap-6">
           {/* Project Overview */}
-          <div className="bg-bg-secondary rounded-2xl border border-border-card p-6">
-            <div className="flex items-center gap-3 mb-6">
+          <div className=" overflow-hidden rounded-2xl border border-border-card ">
+            <div className="flex items-center gap-3 border-b border-b-black/30 px-6 py-10 bg-bg-secondary">
               <svg className="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1v1H9V7zm5 0h1v1h-1V7zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1zm-5 4h1v1H9v-1zm5 0h1v1h-1v-1z" /></svg>
-              <h2 className="text-xl font-bold font-jost text-text-primary">Project Overview</h2>
+              <h2 className="text-xl font-semibold  text-text-primary">Project Overview</h2>
             </div>
-            <p className="text-text-secondary text-sm leading-relaxed mb-6">
+            <div className="flex flex-col p-6 divide-y divide-black/30 sapce-y-6 gap-7.5">
+              <p className="text-text-secondary text-sm leading-relaxed pb-6">
               Lorem ipsum dolor sit amet consectetur. Diam est ultricies facilisis magna risus neque amet tincidunt. Mi eget interdum lacinia sed amet quam. Pretium etiam dignissim ultrices et lobortis tristique convallis aliquam. In congue libero mauris vitae fringilla blandit nisl. Dignissim at odio auctor feugiat. Sit erat dignissim sit laoreet tortor pharetra egestas. Volutpat risus montes euismod sed luctus diam. Sed ut urna nunc cum proin. Tortor tristique pellentesque tristique senectus arcu sodales sit.
             </p>
-            <div className="grid grid-cols-2 gap-4 mb-6">
-              <div className="bg-bg-primary rounded-xl p-4 border border-border-light">
+            <div className="grid grid-cols-2 gap-4 pb-6">
+              <div className="bg-bg-secondary rounded-xl p-4 border border-border-light">
                 <p className="text-xs font-bold text-text-tertiary mb-1 uppercase">CURRENT STAGE</p>
                 <p className="text-sm font-medium text-text-primary">Pre-Feasibility</p>
               </div>
-              <div className="bg-bg-primary rounded-xl p-4 border border-border-light">
+              <div className="bg-bg-secondary rounded-xl p-4 border border-border-light">
                 <p className="text-xs font-bold text-text-tertiary mb-1 uppercase">LOCATION</p>
                 <p className="text-sm font-medium text-text-primary">Lagos, Nigeria</p>
               </div>
@@ -64,41 +65,47 @@ export default function ProjectDetails() {
               <p className="text-xs font-bold text-text-tertiary mb-2 uppercase">SECTOR</p>
               <span className="inline-block bg-brand text-text-primary text-xs font-bold px-4 py-1.5 rounded-full">AI in Education</span>
             </div>
+
+            </div>
+            
           </div>
 
           {/* Financial Overview */}
-          <div className="bg-bg-secondary rounded-2xl border border-border-card p-6">
-            <div className="flex items-center gap-3 mb-6">
+          <div className="rounded-2xl border border-border-card overflow-hidden">
+            <div className="flex items-center gap-3 mb-6 bg-bg-secondary px-6 py-10">
               <svg className="w-5 h-5 text-investors-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              <h2 className="text-xl font-bold font-jost text-text-primary">Financial Overview</h2>
+              <h2 className="text-xl font-semibold  text-text-primary">Financial Overview</h2>
             </div>
-            <div className="grid grid-cols-2 gap-4 mb-4">
-              <div className="bg-bg-primary rounded-xl p-4 border border-border-light">
+            <div className="p-6 flex flex-col gap-6 ">
+            <div className="grid grid-cols-2 gap-4 ">
+              <div className="bg-bg-secondary rounded-xl p-4 border border-border-light">
                 <p className="text-xs font-bold text-text-tertiary mb-1 uppercase">TOTAL PROJECT COST</p>
                 <p className="text-sm font-medium text-text-primary">Under - 1M</p>
               </div>
-              <div className="bg-bg-primary rounded-xl p-4 border border-border-light">
+              <div className="bg-bg-secondary rounded-xl p-4 border border-border-light">
                 <p className="text-xs font-bold text-text-tertiary mb-1 uppercase">INVESTOR TYPE NEEDED</p>
                 <p className="text-sm font-medium text-text-primary">Strategic Partner</p>
               </div>
             </div>
-            <div className="bg-bg-primary rounded-xl p-4 border border-border-light">
+            <div className="bg-bg-secondary rounded-xl p-4 border border-border-light ">
               <p className="text-xs font-bold text-text-tertiary mb-1 uppercase">TARGET INVESTOR PROFILE</p>
               <p className="text-sm font-medium text-text-primary">Strategic Partner</p>
+            </div>
+            <hr className="text-black/30"/>
             </div>
           </div>
 
           {/* Risk & Mitigation */}
-          <div className="bg-bg-secondary rounded-2xl border border-border-card p-6">
+          <div className="bg-bg-secondary rounded-t-2xl border border-border-card px-6 py-10">
             <div className="flex items-center gap-3">
               <svg className="w-5 h-5 text-[#EA580C]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-              <h2 className="text-xl font-bold font-jost text-text-primary">Risk & Mitigation</h2>
+              <h2 className="text-xl font-semibold  text-text-primary">Risk & Mitigation</h2>
             </div>
           </div>
         </div>
 
         {/* Right Column */}
-        <div className="w-full lg:w-95 flex flex-col gap-6">
+        <div className="w-full col-span-2 flex flex-col gap-6">
           
           {/* Contact Information */}
           <div className="bg-bg-primary rounded-2xl border border-border-card overflow-hidden">

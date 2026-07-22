@@ -55,6 +55,7 @@
   --color-mint-linear2 : #F0FDFA;
   --color-label : #BFDBFE;
   --color-label-text: #1D4ED8;
+  --color-sector-label : #E0E0E0;
   --shadow-btn : 0 1px 2px 0 rgba(0,0,0,0.05);
   --shadow-btnB : 0 2px 4px -2px #A7F3D0, 0 4px 6px -1px #A7F3D0;
 }
