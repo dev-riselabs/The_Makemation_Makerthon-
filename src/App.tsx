@@ -7,6 +7,9 @@ import Dashboard from './pages/Dashboard';
 import Overview from './pages/Overview';
 import Projects from './pages/Projects';
 import ProjectDetails from './pages/ProjectDetails';
+import Makers from './pages/Makers';
+import Investors from './pages/Investors';
+import InvestorInterest from './pages/InvestorInterest';
 import Header from './components/Header';
 
 function AppContent() {
@@ -34,6 +37,9 @@ function AppContent() {
             <Route index element={<Overview />} />
             <Route path="projects" element={<Projects />} />
             <Route path="projects/:id" element={<ProjectDetails />} />
+            <Route path="makers" element={<Makers />} />
+            <Route path="investors" element={<Investors />} />
+            <Route path="interest" element={<InvestorInterest />} />
           </Route>
         </Routes>
       </div>
