@@ -16,6 +16,9 @@ import Header from "./components/Header";
 import Investor from "./pages/Investor";
 import InvestorCommand from "./pages/InvestorCommand";
 import InvestorProjects from "./pages/InvestorProject";
+import Investors from "./pages/Investors";
+import Makers from "./pages/Makers";
+import InvestorInterest from "./pages/InvestorInterest";
 
 function AppContent() {
   const location = useLocation();
@@ -58,6 +61,9 @@ function AppContent() {
             <Route index element={<Overview />} />
             <Route path="projects" element={<Projects />} />
             <Route path="projects/:id" element={<ProjectDetails />} />
+            <Route path="makers" element={<Makers />} />
+            <Route path="admin-investors" element={<Investors />} />
+            <Route path="interest" element={<InvestorInterest />} />
           </Route>
           <Route path="/investor" element={<Investor />}>
             <Route index element={<InvestorCommand />} />
