@@ -18,7 +18,7 @@ export default function Register() {
   const [investorAgreeTerms, setInvestorAgreeTerms] = useState(false);
 
   return (
-    <main className="flex-grow flex flex-col items-center pt-8 px-4 pb-12 max-w-4xl mx-auto w-full">
+    <main className="grow flex flex-col items-center pt-8 px-4 pb-12 max-w-4xl mx-auto w-full">
       {/* Back Button */}
       <div className="w-full flex justify-start mb-6">
         <Link to="/" className="inline-flex items-center gap-2 text-text-secondary hover:text-text-primary transition-colors font-quicksand font-medium hover:bg-bg-secondary px-3 py-2 rounded-lg -ml-3">
@@ -216,7 +216,7 @@ export default function Register() {
                 {/* Project Summary (full width) */}
                 <div className="flex flex-col gap-2 md:col-span-2">
                   <label className="text-sm font-medium text-text-secondary">Project Summary * (max 100 words)</label>
-                  <textarea placeholder="Brief description..." className="w-full px-4 py-3 rounded-xl border border-border-secondary focus:outline-none focus:border-brand text-text-primary placeholder-icon-gray bg-bg-secondary min-h-[120px] resize-none"></textarea>
+                  <textarea placeholder="Brief description..." className="w-full px-4 py-3 rounded-xl border border-border-secondary focus:outline-none focus:border-brand text-text-primary placeholder-icon-gray bg-bg-secondary min-h-30 resize-none"></textarea>
                 </div>
               </div>
 
@@ -376,7 +376,7 @@ export default function Register() {
                           }}
                           className={`flex items-center gap-4 px-5 py-4 rounded-xl border cursor-pointer transition-colors ${isSelected ? 'bg-text-primary text-bg-primary border-text-primary' : 'bg-bg-primary border-border-secondary hover:border-text-primary'}`}
                         >
-                          <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center flex-shrink-0 ${isSelected ? 'border-bg-primary' : 'border-icon-gray'}`}>
+                          <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center shrink-0 ${isSelected ? 'border-bg-primary' : 'border-icon-gray'}`}>
                             {isSelected && <div className="w-2.5 h-2.5 bg-bg-primary rounded-full"></div>}
                           </div>
                           <span className={`text-sm font-medium ${isSelected ? 'text-bg-primary' : 'text-text-secondary'}`}>{item}</span>
@@ -455,8 +455,8 @@ export default function Register() {
                     onClick={() => setInvestorAgreeTerms(!investorAgreeTerms)}
                     className="flex items-center gap-4 p-5 rounded-xl border border-border-secondary cursor-pointer hover:border-border-dark transition-colors bg-bg-primary"
                   >
-                    <div className="w-5 h-5 rounded-[4px] border-2 border-text-primary flex items-center justify-center flex-shrink-0">
-                      {investorAgreeTerms && <div className="w-2.5 h-2.5 bg-text-primary rounded-[2px]"></div>}
+                    <div className="w-5 h-5 rounded-sm border-2 border-text-primary flex items-center justify-center shrink-0">
+                      {investorAgreeTerms && <div className="w-2.5 h-2.5 bg-text-primary rounded-xs"></div>}
                     </div>
                     <span className="text-[15px] font-medium text-text-secondary">
                       I agree to the <span className="font-bold text-text-primary">Terms</span> and <span className="font-bold text-text-primary">Privacy Policy.</span> *
@@ -487,7 +487,7 @@ export default function Register() {
                 {/* Why should this project be considered */}
                 <div className="flex flex-col gap-2">
                   <label className="text-sm font-medium text-text-secondary">Why should this project be considered? *</label>
-                  <textarea placeholder="Impact, alignment with Nigeria development goals..." className="w-full px-4 py-3 rounded-xl border border-border-secondary focus:outline-none focus:border-brand text-text-primary placeholder-icon-gray bg-bg-secondary min-h-[100px] resize-none"></textarea>
+                  <textarea placeholder="Impact, alignment with Nigeria development goals..." className="w-full px-4 py-3 rounded-xl border border-border-secondary focus:outline-none focus:border-brand text-text-primary placeholder-icon-gray bg-bg-secondary min-h-25 resize-none"></textarea>
                 </div>
 
                 {/* Available Documents */}
@@ -534,8 +534,8 @@ export default function Register() {
                     onClick={() => setLegalIssues(!legalIssues)}
                     className="flex items-center gap-4 p-5 rounded-xl border border-border-secondary cursor-pointer hover:border-border-dark transition-colors bg-bg-primary"
                   >
-                    <div className="w-5 h-5 rounded-[4px] border-2 border-text-primary flex items-center justify-center flex-shrink-0">
-                      {legalIssues && <div className="w-2.5 h-2.5 bg-text-primary rounded-[2px]"></div>}
+                    <div className="w-5 h-5 rounded-sm border-2 border-text-primary flex items-center justify-center shrink-0">
+                      {legalIssues && <div className="w-2.5 h-2.5 bg-text-primary rounded-xs"></div>}
                     </div>
                     <span className="text-[15px] font-medium text-text-secondary">This project has legal/regulatory issues to disclose</span>
                   </div>
@@ -543,7 +543,7 @@ export default function Register() {
                   {legalIssues && (
                     <textarea 
                       placeholder="Describe issues..." 
-                      className="w-full px-4 py-3 rounded-xl border border-border-secondary focus:outline-none focus:border-brand text-text-primary placeholder-icon-gray bg-bg-secondary min-h-[100px] resize-none"
+                      className="w-full px-4 py-3 rounded-xl border border-border-secondary focus:outline-none focus:border-brand text-text-primary placeholder-icon-gray bg-bg-secondary min-h-25 resize-none"
                     ></textarea>
                   )}
 
@@ -551,8 +551,8 @@ export default function Register() {
                     onClick={() => setAgreeTerms(!agreeTerms)}
                     className="flex items-center gap-4 p-5 rounded-xl border border-border-secondary cursor-pointer hover:border-border-dark transition-colors bg-bg-primary"
                   >
-                    <div className="w-5 h-5 rounded-[4px] border-2 border-text-primary flex items-center justify-center flex-shrink-0">
-                      {agreeTerms && <div className="w-2.5 h-2.5 bg-text-primary rounded-[2px]"></div>}
+                    <div className="w-5 h-5 rounded-sm border-2 border-text-primary flex items-center justify-center shrink-0">
+                      {agreeTerms && <div className="w-2.5 h-2.5 bg-text-primary rounded-xs"></div>}
                     </div>
                     <span className="text-[15px] font-medium text-text-secondary">
                       I confirm all information is accurate and agree to the <span className="font-bold text-text-primary">Terms</span> and <span className="font-bold text-text-primary">Privacy Policy.</span> *

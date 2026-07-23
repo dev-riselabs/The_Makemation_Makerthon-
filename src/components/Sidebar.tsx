@@ -22,8 +22,8 @@ export default function Sidebar({ isOpen, onClose }: { isOpen?: boolean, onClose
           onClick={onClose}
         />
       )}
-      <aside className={`fixed md:static inset-y-0 left-0 z-50 transform transition-transform duration-300 w-[240px] bg-header-bg flex-shrink-0 flex flex-col py-8 border-r border-border-secondary h-full overflow-y-auto ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}>
-        <nav className="flex flex-col gap-2 w-full">
+      <aside className={`fixed md:static inset-y-0 left-0 z-50 transform transition-transform duration-300 w-60 bg-header-bg shrink-0 flex flex-col py-8 border-r border-border-secondary h-full overflow-y-auto ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}`}>
+        <nav className="flex flex-col gap-2 w-full p-4">
           {navItems.map((item) => {
             const isActive = location.pathname === item.path || (item.path !== '/admin' && location.pathname.startsWith(item.path));
             return (

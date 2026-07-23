@@ -7,7 +7,7 @@ export default function Overview() {
       {/* Summary Cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
         {/* Registered Makers */}
-        <div className="bg-makers-bg rounded-2xl p-6 flex flex-col justify-between min-h-[140px]">
+        <div className="bg-makers-bg rounded-2xl p-6 flex flex-col justify-between min-h-35">
           <div className="flex justify-between items-start">
             <h3 className="font-bold text-sm text-text-primary">Registered Makers</h3>
             <div className="w-10 h-10 rounded-full bg-makers-icon-bg flex items-center justify-center">
@@ -26,7 +26,7 @@ export default function Overview() {
         </div>
 
         {/* Registered Investors */}
-        <div className="bg-investors-bg rounded-2xl p-6 flex flex-col justify-between min-h-[140px]">
+        <div className="bg-investors-bg rounded-2xl p-6 flex flex-col justify-between min-h-35">
           <div className="flex justify-between items-start">
             <h3 className="font-bold text-sm text-text-primary">Registered Investors</h3>
             <div className="w-10 h-10 rounded-full bg-investors-icon-bg flex items-center justify-center">
@@ -45,7 +45,7 @@ export default function Overview() {
         </div>
 
         {/* Projects */}
-        <div className="bg-projects-bg rounded-2xl p-6 flex flex-col justify-between min-h-[140px]">
+        <div className="bg-projects-bg rounded-2xl p-6 flex flex-col justify-between min-h-35">
           <div className="flex justify-between items-start">
             <h3 className="font-bold text-sm text-text-primary">Projects</h3>
             <div className="w-10 h-10 rounded-full bg-projects-icon-bg flex items-center justify-center">
@@ -74,7 +74,7 @@ export default function Overview() {
           <div className="flex items-center gap-4">
             <div className="relative">
               <svg className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-icon-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-              <input type="text" placeholder="Search employee..." className="pl-9 pr-4 py-2 border border-border-secondary rounded-lg text-xs font-medium focus:outline-none focus:border-brand w-[200px]" />
+              <input type="text" placeholder="Search employee..." className="pl-9 pr-4 py-2 border border-border-secondary rounded-lg text-xs font-medium focus:outline-none focus:border-brand w-50" />
             </div>
             <button className="flex items-center gap-1.5 text-xs font-bold text-text-secondary hover:text-text-primary transition-colors">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
@@ -84,7 +84,7 @@ export default function Overview() {
         </div>
         
         <div className="overflow-x-auto w-full">
-          <table className="w-full text-left border-collapse min-w-[700px]">
+          <table className="w-full text-left border-collapse min-w-175">
             <thead>
               <tr className="bg-bg-secondary border-b border-border-light">
                 <th className="py-4 px-6 text-xs font-bold text-text-primary first:rounded-l-xl">Name</th>
@@ -123,7 +123,7 @@ export default function Overview() {
           <div className="flex items-center gap-4">
             <div className="relative">
               <svg className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-icon-gray" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
-              <input type="text" placeholder="Search employee..." className="pl-9 pr-4 py-2 border border-border-secondary rounded-lg text-xs font-medium focus:outline-none focus:border-brand w-[200px]" />
+              <input type="text" placeholder="Search employee..." className="pl-9 pr-4 py-2 border border-border-secondary rounded-lg text-xs font-medium focus:outline-none focus:border-brand w-50" />
             </div>
             <button className="flex items-center gap-1.5 text-xs font-bold text-text-secondary hover:text-text-primary transition-colors">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
@@ -133,7 +133,7 @@ export default function Overview() {
         </div>
         
         <div className="overflow-x-auto w-full">
-          <table className="w-full text-left border-collapse min-w-[700px]">
+          <table className="w-full text-left border-collapse min-w-175">
             <thead>
               <tr className="bg-bg-secondary border-b border-border-light">
                 <th className="py-4 px-6 text-xs font-bold text-text-primary first:rounded-l-xl">Name</th>

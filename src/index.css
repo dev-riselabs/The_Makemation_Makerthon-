@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 @import "tailwindcss";
 
 @theme {
   --font-jost: "Jost", sans-serif;
   --font-quicksand: "Quicksand", sans-serif;
+  --font-inter: "Inter", sans-serif;
 
   --color-brand: #FDB300;
   --color-header-bg: #F5F5F5;
@@ -42,4 +44,19 @@
   
   --color-projects-bg: #FFFBEB;
   --color-projects-icon-bg: #FEF3C7;
+
+  /* investor color */
+  --color-investor-text : #111827;
+  --color-btn-green : #059669;
+  --color-btn-bg : #FCFAF8;
+  --color-deal-title: #212121;
+  --color-mint : #6EE7B7;
+  --color-mint-linear: #ECFDF5;
+  --color-mint-linear2 : #F0FDFA;
+  --color-label : #BFDBFE;
+  --color-label-text: #1D4ED8;
+  --color-sector-label : #E0E0E0;
+  --color-shield: #FF8D28;
+  --shadow-btn : 0 1px 2px 0 rgba(0,0,0,0.05);
+  --shadow-btnB : 0 2px 4px -2px #A7F3D0, 0 4px 6px -1px #A7F3D0;
 }

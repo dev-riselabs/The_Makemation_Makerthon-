@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { FaRegHeart } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
-export default function Projects() {
+export default function InvestorProjects() {
   const [activeFilter, setActiveFilter] = useState('All States Project');
   const [isFiltersOpen, setIsFiltersOpen] = useState(true);
   const [activeInvestmentValue, setActiveInvestmentValue] = useState('Any');
@@ -197,11 +198,11 @@ export default function Projects() {
                 </span>
               </div>
               <div className="flex items-center gap-3">
-                <button className="flex items-center gap-2 bg-brand text-bg-primary text-sm font-bold px-5 py-2.5 rounded-lg hover:bg-brand/90 transition-colors">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                <button className="flex items-center gap-2 bg-brand text-black text-sm font-bold px-5 py-2.5 rounded-lg hover:bg-brand/90 transition-colors">
+                  <FaRegHeart className='w-6 h-6' />
                   Express Interest
                 </button>
-                <Link to={`/admin/projects/${index + 1}`} className="flex items-center gap-2 bg-bg-primary border border-border-card text-text-primary text-sm font-bold px-5 py-2.5 rounded-lg hover:border-brand transition-colors">
+                <Link to={`/investor/projects/${index + 1}`} className="flex items-center gap-2 bg-bg-primary border border-border-card text-text-primary text-sm font-bold px-5 py-2.5 rounded-lg hover:border-brand transition-colors">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" /></svg>
                   View Details
                 </Link>
