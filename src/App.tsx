@@ -19,16 +19,20 @@ import InvestorProjects from "./pages/InvestorProject";
 import Investors from "./pages/Investors";
 import Makers from "./pages/Makers";
 import InvestorInterest from "./pages/InvestorInterest";
+import ProjectOwner from './pages/ProjectOwner'
+import ProjectOverview from "./pages/ProjectOverview";
+import Faq from "./pages/Faq";
 
 function AppContent() {
   const location = useLocation();
   const isAdmin = location.pathname.startsWith("/admin");
   const isInvestor = location.pathname.startsWith("/investor");
+  const isProjectOwner = location.pathname.startsWith('/project')
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
     <div
-      className={`bg-bg-primary text-text-primary flex flex-col font-quicksand ${isAdmin ? "h-screen overflow-hidden" : "min-h-screen"}`}
+      className={`bg-bg-primary text-text-primary flex flex-col font-quicksand ${(isAdmin || isProjectOwner )? "h-screen overflow-hidden" : "min-h-screen"}`}
     >
       {/* Top Banner */}
       <div className="h-2 w-full bg-brand shrink-0"></div>
@@ -43,7 +47,7 @@ function AppContent() {
 
       {/* Main Content Area */}
       <div
-        className={`flex flex-col ${isAdmin ? "grow overflow-hidden relative" : "grow"}`}
+        className={`flex flex-col ${(isAdmin || isProjectOwner ) ? "grow overflow-hidden relative" : "grow"}`}
       >
         <Routes>
           <Route path="/" element={<SignIn />} />
@@ -62,7 +66,7 @@ function AppContent() {
             <Route path="projects" element={<Projects />} />
             <Route path="projects/:id" element={<ProjectDetails />} />
             <Route path="makers" element={<Makers />} />
-            <Route path="admin-investors" element={<Investors />} />
+            <Route path="investors" element={<Investors />} />
             <Route path="interest" element={<InvestorInterest />} />
           </Route>
           <Route path="/investor" element={<Investor />}>
@@ -70,11 +74,15 @@ function AppContent() {
             <Route path='projects' element={<InvestorProjects/>}/>
             <Route path="projects/:id" element={<ProjectDetails />} />
           </Route>
+          <Route path='/project' element={<ProjectOwner isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen}/>}>
+             <Route index element={<ProjectOverview/>}/>
+             <Route path='faq' element={<Faq/>}/>
+          </Route>
         </Routes>
       </div>
 
       {/* Footer */}
-      {(!isAdmin && !isInvestor) && (
+      {(!isAdmin && !isInvestor && !isProjectOwner) && (
         <footer className="pb-12 pt-8 text-center text-sm text-text-tertiary font-quicksand mt-auto shrink-0">
           Makemation AI Tech Festivals · Powered by Rise Interactives Studio
         </footer>
