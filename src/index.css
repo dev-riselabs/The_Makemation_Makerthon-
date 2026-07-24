@@ -66,7 +66,15 @@
   --color-slate200 : #CBCFD7;
   --color-upload-green: #00A93E;
   --color-blue100: #6E7FA9;
+  --color-blue200 : #E2E8F0;
+  --color-blue300 : #94A3B8;
+  --color-slate300: #CBD5E1;
+  --color-slate400 : #54656F;
   --color-online-green: #128C7E;
+  --color-orange100: #F5E6C7;
   --shadow-btn : 0 1px 2px 0 rgba(0,0,0,0.05);
   --shadow-btnB : 0 2px 4px -2px #A7F3D0, 0 4px 6px -1px #A7F3D0;
+  --shadow-input : 0 6px 4px -2px #10182808, 0 12px 16px -4px #10182814;
+  --shadow-today : 0 1px 0.5px 0 #0B141A21;
+  --shadow-client : 0 2px 2px 0 #00000040;
 }
