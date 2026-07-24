@@ -22,6 +22,8 @@ import InvestorInterest from "./pages/InvestorInterest";
 import ProjectOwner from './pages/ProjectOwner'
 import ProjectOverview from "./pages/ProjectOverview";
 import Faq from "./pages/Faq";
+import UploadCenter from "./pages/UploadCenter";
+import Message from "./pages/Message";
 
 function AppContent() {
   const location = useLocation();
@@ -77,6 +79,8 @@ function AppContent() {
           <Route path='/project' element={<ProjectOwner isSidebarOpen={isSidebarOpen} setIsSidebarOpen={setIsSidebarOpen}/>}>
              <Route index element={<ProjectOverview/>}/>
              <Route path='faq' element={<Faq/>}/>
+             <Route path='upload' element={<UploadCenter/>}/>
+             <Route path='message' element={<Message/>}/>
           </Route>
         </Routes>
       </div>

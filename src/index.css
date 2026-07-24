@@ -63,6 +63,10 @@
   --color-red : #C30003;
   --color-orange : #8A6100;
   --color-slate100: #D9D9D9;
+  --color-slate200 : #CBCFD7;
+  --color-upload-green: #00A93E;
+  --color-blue100: #6E7FA9;
+  --color-online-green: #128C7E;
   --shadow-btn : 0 1px 2px 0 rgba(0,0,0,0.05);
   --shadow-btnB : 0 2px 4px -2px #A7F3D0, 0 4px 6px -1px #A7F3D0;
 }
