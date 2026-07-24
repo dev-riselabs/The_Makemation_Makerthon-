@@ -79,18 +79,36 @@ function Message() {
           </div>
         </header>
         <div className="grid grid-cols-3 divide-x divide-black">
-          <div className="flex flex-col gap-4 px-4.5 py-5"></div>
+          <div className="flex flex-col gap-4 px-4.5 py-5">
+            {
+              [1,2,3,4,5].map(i => <div key={i} className={`flex items-center gap-3 px-1.5 py-1 rounded-lg ${
+                i === 1 ? 'bg-slate700' : ''
+              }`}>
+                <img src="/user2.jpg" alt="" className="w-15 h-15 rounded-full object-cover shrink-0"/>
+                <div className="flex flex-col gap-2 flex-1">
+                  <div className="flex items-center justify-between">
+                    <h4 className="text-slate800 font-jost text-base">Makerthon Support</h4>
+                    <span className="text-brand text-[10px] font-quicksand">07:40 </span>
+                  </div>
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-slate800 text-xs">Hi Joy Ijeoma...</span>
+                    <span className="w-5 h-5 rounded-full bg-brand text-black font-bold font-jost text-[10px] flex items-center justify-center">1</span>
+                  </div>
+                </div>
+              </div>)
+            }
+          </div>
           <div className="col-span-2 flex flex-col gap-4 px-4.5 py-5">
             <div className="flex flex-col gap-4 h-100 overflow-y-auto">
               <div className="self-center px-3 py-1.25 text-xs text-slate400 rounded-full shadow-today ">
                 TODAY
               </div>
               {
-                messagesArr.map(({message, time, isSender}, i) => <div key={i} className={`flex items-end gap-2 py-4 px-6 ${
-                  isSender ? 'justify-end bg-orange100 rounded-2xl ' : 'justify-start shadow-client rounded-2xl rounded-bl-0'
+                messagesArr.map(({message, time, isSender}, i) => <div key={i} className={`flex items-end gap-2 py-4 px-6 max-w-100 ${
+                  isSender ? 'justify-end bg-orange100 rounded-t-2xl rounded-br-2xl ml-auto shadow-user' : 'justify-start shadow-client rounded-t-2xl rounded-br-2xl'
                 }`}>
-                  <p>{message}</p>
-                  <span>{time}</span>
+                  <p className="text-slate500 text-sm">{message}</p>
+                  <span className="text-[11px] text-slate600">{time}</span>
                 </div>)
               }
             </div>
